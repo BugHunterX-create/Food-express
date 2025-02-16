@@ -7,10 +7,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>Food Express</h1>
-        <div class="food-grid" id="foodGrid"></div>
-    </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li class="cart">🛒 Cart (<span id="cartCount">0</span>)</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Our Special Menu</h2>
+        <div class="food-container" id="foodContainer"></div>
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>
