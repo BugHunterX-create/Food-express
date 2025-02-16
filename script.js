@@ -1,10 +1,15 @@
 const foods = [
     { id: 1, name: "Burger", price: "₹120", image: "https://via.placeholder.com/150" },
     { id: 2, name: "Pizza", price: "₹250", image: "https://via.placeholder.com/150" },
-    { id: 3, name: "Pasta", price: "₹180", image: "https://via.placeholder.com/150" }
+    { id: 3, name: "Pasta", price: "₹180", image: "https://via.placeholder.com/150" },
+    { id: 4, name: "Sandwich", price: "₹100", image: "https://via.placeholder.com/150" },
+    { id: 5, name: "French Fries", price: "₹80", image: "https://via.placeholder.com/150" }
 ];
 
-const foodGrid = document.getElementById("foodGrid");
+let cartCount = 0;
+
+const foodContainer = document.getElementById("foodContainer");
+const cartCountElement = document.getElementById("cartCount");
 
 foods.forEach(food => {
     const card = document.createElement("div");
@@ -14,8 +19,13 @@ foods.forEach(food => {
         <img src="${food.image}" alt="${food.name}">
         <h2>${food.name}</h2>
         <p>${food.price}</p>
-        <button class="button">Add to Cart</button>
+        <button class="button" onclick="addToCart()">Add to Cart</button>
     `;
 
-    foodGrid.appendChild(card);
+    foodContainer.appendChild(card);
 });
+
+function addToCart() {
+    cartCount++;
+    cartCountElement.textContent = cartCount;
+}
